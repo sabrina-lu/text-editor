@@ -1,0 +1,32 @@
+.editor-container {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.text {
+    align-self: center;
+}
+
+.text-editor {
+    align-self: center;
+    margin-top: 1rem;
+    width: 50%;
+}
+
+.logout-btn {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    align-self: center;
+}
+
+h3 {
+    margin: 0;
+}
+
+h2 {
+    margin-top: 2rem;
+    margin-bottom: 0;
+}

@@ -1,0 +1,17 @@
+.login-container {  
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+
+.app-title {
+    align-self: center;
+}
+
+.login-btn {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    font-size: larger;
+    align-self: center;
+}
