@@ -2,7 +2,9 @@
     <h1 class="text">PENCIL TEXT EDITOR</h1>
     <h3 class="text">Type anything in the editor below and it will automatically save.</h3>
     <h2 class="text">{{ "Author: " + user.displayName }}</h2>
-    <textarea class="text-editor" value="text" (change)="textChange($event)">{{text}}</textarea>
+    <p #editable id="edit" class="text-editor">{{ text }}</p>
+<!--<textarea class="text-editor" value="text" (change)="textChange($event)">{{text}}</textarea> -->
     <button class="logout-btn" (click)="authService.signOut()">Log Out</button>
+    
 </div>
 

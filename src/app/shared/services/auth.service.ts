@@ -43,22 +43,8 @@ export class AuthService {
        this.ngZone.run(() => {
           this.router.navigate(['text-editor'])
         })
-      this.setUserData(result.user)
     }).catch((error) => {
       window.alert(error)
-    })
-  }
-
-  setUserData(user) {
-    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.id}`)
-    const userData: User = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      emailVerified: user.emailVerified
-    }
-    return userRef.set(userData, {
-      merge: true
     })
   }
 

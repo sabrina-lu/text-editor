@@ -7,12 +7,15 @@
 
 .text {
     align-self: center;
+    text-align: center;
 }
 
 .text-editor {
     align-self: center;
     margin-top: 1rem;
     width: 50%;
+    height: 50vh;
+    resize: vertical;
 }
 
 .logout-btn {

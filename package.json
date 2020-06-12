@@ -22,6 +22,8 @@
     "@angular/router": "~8.2.14",
     "bootstrap": "^4.5.0",
     "firebase": "^7.15.1",
+    "medium-editor": "^5.23.3",
+    "ng2-meditor": "^1.0.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
