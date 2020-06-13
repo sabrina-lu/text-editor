@@ -18,12 +18,12 @@ export class TextEditorComponent implements OnInit, AfterViewInit {
   public authService: AuthService
   public afs: AngularFirestore
 
-  @HostListener('document:keydown', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) {
-      setTimeout(() => {
-        this.textChange()
-      },1000)
-  }
+  // @HostListener('document:keydown', ['$event'])
+  // handleKeyboardEvent(event: KeyboardEvent) {
+  //     setTimeout(() => {
+  //       this.textChange()
+  //     },1000)
+  // }
 
   @HostListener('window:beforeunload', ['$event'])
   public onBeforeUnload (event: any) {
