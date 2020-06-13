@@ -64,7 +64,9 @@ export class TextEditorComponent implements OnInit, AfterViewInit {
   } 
 
   ngAfterViewInit() {
-    this.editor = new MediumEditor(this.editable.nativeElement)
+    this.editor = new MediumEditor(this.editable.nativeElement, {
+      placeholder: false
+    })
 
   }
   
