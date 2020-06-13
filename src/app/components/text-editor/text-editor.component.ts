@@ -18,12 +18,17 @@ export class TextEditorComponent implements OnInit, AfterViewInit {
   public authService: AuthService
   public afs: AngularFirestore
 
-  // @HostListener('document:keydown', ['$event'])
-  // handleKeyboardEvent(event: KeyboardEvent) {
-  //     setTimeout(() => {
-  //       this.textChange()
-  //     },1000)
-  // }
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if(event.keyCode == 91 || event.keyCode == 17 || event.keyCode == 18) {
+      this.textChange()
+    }
+  }
+
+  @HostListener('window:popstate', ['$event'])
+  public onPopState (event: PopStateEvent) {
+    this.textChange()
+  }
 
   @HostListener('window:beforeunload', ['$event'])
   public onBeforeUnload (event: any) {
