@@ -17,12 +17,27 @@ export class TextEditorComponent implements OnInit, AfterViewInit {
   public users: Array<any>
   public authService: AuthService
   public afs: AngularFirestore
-  private e: ElementRef
 
   @HostListener('document:keydown', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) { 
-    this.text = this.editable.nativeElement.textContent
-    this.setUserData(this.user, this.text)
+  handleKeyboardEvent(event: KeyboardEvent) {
+      setTimeout(() => {
+        this.textChange()
+      },1000)
+  }
+
+  @HostListener('window:beforeunload', ['$event'])
+  public onBeforeUnload (event: any) {
+    this.textChange()
+  }
+
+  @HostListener('window:unload', ['$event'])
+  public onUnload (event: any) {
+    this.textChange()
+  }
+
+  @HostListener('document:click', ['$event'])
+  public documentClick(event: Event): void {
+    this.textChange()
   }
   
   constructor(authService: AuthService, afs: AngularFirestore) {
@@ -38,7 +53,7 @@ export class TextEditorComponent implements OnInit, AfterViewInit {
       this.users = res
       this.users.forEach(a => {
         if(a.id == this.user.uid)
-        this.text = a.text
+        this.editable.nativeElement.innerHTML = a.text
       })
     })
   } 
@@ -60,8 +75,8 @@ export class TextEditorComponent implements OnInit, AfterViewInit {
     })
   }
 
-  textChange(text: string) {
-    this.text = text
-    this.setUserData(this.user,this.text)
+  textChange() {
+    this.text = this.editable.nativeElement.innerHTML
+    this.setUserData(this.user, this.text)
   }
 }
